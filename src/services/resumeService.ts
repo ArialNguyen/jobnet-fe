@@ -4,7 +4,7 @@ import ResumeType from '@/types/resume';
 import envConfig from '@/config';
 
 class ResumeService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/resumes`;
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/resumes`;
 
   async getResumesByAuth(accessToken: string) {
     const res = await fetch(this.apiBaseUrl, {

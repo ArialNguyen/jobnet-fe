@@ -8,7 +8,7 @@ export interface AuthRequest {
 }
 
 class AuthService extends BaseService{
-    private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/auth`
+    private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/auth`
 
     async refresh(refreshToken: string) {
         const res = await fetch(

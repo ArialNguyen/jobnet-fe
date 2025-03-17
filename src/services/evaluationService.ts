@@ -4,7 +4,7 @@ import EvaluationType from '../types/evaluation';
 import envConfig from '@/config';
 
 class EvaluationService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/resumes`;
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/resumes`;
 
   async getEvaluationByResumeId(id: string, accessToken: string) {
     const res = await fetch(`${this.apiBaseUrl}/evaluations/${id}`, {

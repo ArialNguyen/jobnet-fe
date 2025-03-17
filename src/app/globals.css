@@ -1,11 +1,12 @@
+
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
   /* Hide Error Nextjs */
-  /* nextjs-portal {
+  nextjs-portal {
     display: none;
-  } */
+  }
   @layer base {
     :root {
       --background: 0 0% 100%;

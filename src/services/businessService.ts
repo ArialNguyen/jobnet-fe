@@ -5,7 +5,7 @@ import PaginationType from '../types/pagination';
 import envConfig from '@/config';
 
 class BusinessService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/businesses`;
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/businesses`;
 
   async getBusinesses(props?: {
     page?: number;
@@ -41,7 +41,7 @@ class BusinessService extends BaseService {
   }
 
   async getBusinessById(id: string) {
-    const res = await fetch(`${this.apiBaseUrl}/${id}`, {cache: "no-cache"});
+    const res = await fetch(`${this.apiBaseUrl}/${id}`, { cache: "no-cache" });
 
     this.checkResponseNotOk(res);
     return this.getResponseData<BusinessType>(res);

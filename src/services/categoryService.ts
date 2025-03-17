@@ -4,7 +4,7 @@ import BaseService from './baseService';
 import CategoryType from '@/types/category';
 
 class CategoryService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/categories`;
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/categories`;
 
   async getCategories(props?: { search?: string }) {
     const params = new URLSearchParams();

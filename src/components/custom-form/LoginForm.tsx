@@ -18,6 +18,7 @@ import { useAppDispatch } from '@/hooks/useRedux'
 import { setLoading } from '@/features/loading/loadingSlice'
 // import { useCurrentSession } from '@/lib/hooks'
 import { getSession } from 'next-auth/react'
+import { toast } from 'sonner'
 
 type LoginProps = {
     role: "Recruiter" | "JobSeeker" | "Admin"
@@ -28,6 +29,10 @@ export default function LoginForm({ role }: LoginProps) {
     const searchParams = useSearchParams()
     const callbackUrl = searchParams.get("callbackUrl")
     const [error, setError] = useState<string | undefined>("")
+
+    if (searchParams.get("type")){
+        toast.success(searchParams.get("message"))
+    }
 
     const form = useForm<z.infer<typeof LoginSchema>>({
         resolver: zodResolver(LoginSchema),
@@ -69,7 +74,7 @@ export default function LoginForm({ role }: LoginProps) {
     }
     return (
         <Form {...form}>
-            <form className='space-y-6 h-full' onSubmit={form.handleSubmit(onSubmit)}>
+            <form className='h-full space-y-6' onSubmit={form.handleSubmit(onSubmit)}>
                 <div className="flex flex-col gap-4 pt-8">
                     <FormField control={form.control}
                         name='email'
@@ -102,8 +107,8 @@ export default function LoginForm({ role }: LoginProps) {
                         )} />
                     {
                         error && (
-                            <div className='bg-destructive/15 p-3 rounded-md flex items-center gap-x-2 text-destructive text-sm'>
-                                <TriangleAlert className='h-4 w-4' />
+                            <div className='flex items-center p-3 text-sm rounded-md bg-destructive/15 gap-x-2 text-destructive'>
+                                <TriangleAlert className='w-4 h-4' />
                                 <p>{error}</p>
                             </div>
                         )

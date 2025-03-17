@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import '@/app/globals.css';
-import { getSession } from 'next-auth/react';
+import { auth } from '@/auth';
 import RHeadder from '@/components/header/RHeader';
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ type Props = Readonly<{
 }>;
 
 export default async function Layout({ children, params }: Props) {
-    const session = await getSession()
+    const session = await auth();
     return (
         <div>
             { session?.user.role == "Recruiter" && <RHeadder/> }

@@ -1,7 +1,9 @@
 import LoginForm from '@/components/custom-form/LoginForm';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
+import { headers } from 'next/headers';
 import Link from 'next/link';
+import { toast } from 'sonner';
 
 export const metadata: Metadata = {
     title: "JobSeeker Signin",
@@ -11,9 +13,10 @@ export const metadata: Metadata = {
 
 export default async function Signin({ params }: { params: { lang: string } }) {
     const t = await getTranslations()
+    
     return (
         <div>
-            <LoginForm role='JobSeeker'/>
+            <LoginForm role='JobSeeker' />
             <div className="mt-4 text-center">
                 <span className="text-black">{t("signin.signup.label")}</span>{' '}
                 <Link

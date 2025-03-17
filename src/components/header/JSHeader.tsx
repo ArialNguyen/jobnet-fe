@@ -21,6 +21,8 @@ import { useTranslations } from 'next-intl'
 import { useSession } from 'next-auth/react'
 import { useTransition } from 'react'
 import { logoutAction } from '@/actions/jsAuth'
+import '@/app/globals.css';
+
 
 interface JSHeaderProps{
 }

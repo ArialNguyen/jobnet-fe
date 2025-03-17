@@ -1,7 +1,7 @@
 import { configSchema } from '@/schemas/authSchema';
 
 const configProject = configSchema.safeParse({
-  NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
+  NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
   NEXT_PUBLIC_ELASTIC: process.env.NEXT_PUBLIC_ELASTIC,
   NEXT_PUBLIC_TINYMCE_KEY: process.env.NEXT_PUBLIC_TINYMCE_KEY,
 });

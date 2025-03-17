@@ -21,7 +21,7 @@ export default function TopBusinessCard({
 }): React.ReactElement {
   const t = useTranslations();
 
-  const [totalJobsOfBusiness, setTotalJobsOfBusiness] = useState<PostType[]>();
+  const [totalJobsOfBusiness, setTotalJobsOfBusiness] = useState<Number>();
   const session = useSession();
   const [follow, setFollow] = useState<boolean>(false);
   const jobSeekerId = session.data?.user?.id as string;
@@ -33,7 +33,8 @@ export default function TopBusinessCard({
         activeStatus: 'Opening',
         isExpired: false,
       });
-      setTotalJobsOfBusiness(pagination.data);
+      // alert(pagination.data.length)
+      setTotalJobsOfBusiness(pagination.data.length);
     })();
   }, [data.id]);
 
@@ -113,7 +114,7 @@ export default function TopBusinessCard({
         />
         <div className="flex flex-col items-center space-y-2">
           <div
-            className="w-56 h-12 overflow-hidden font-bold cursor-pointer text-center"
+            className="w-56 h-12 overflow-hidden font-bold text-center cursor-pointer"
             style={{
               display: '-webkit-box',
               WebkitLineClamp: 2,
@@ -129,7 +130,7 @@ export default function TopBusinessCard({
           </div>
           <div>
             {t('home.topLeadingBusinesses.totalPosts', {
-              total: totalJobsOfBusiness?.length,
+              total: totalJobsOfBusiness?.toString(),
             })}
           </div>
           <div className="flex gap-4">

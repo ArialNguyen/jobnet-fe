@@ -1,12 +1,10 @@
-import type { Config } from "tailwindcss"
+/** @type {import('tailwindcss').Config} */
 
 const config = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./src/app/(pages)/[lang]/(*)/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
 	],
   prefix: "",
   theme: {
@@ -75,6 +73,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} 
 
 export default config

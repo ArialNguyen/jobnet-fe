@@ -3,7 +3,7 @@ import ProfessionType from '../types/profession';
 import envConfig from '@/config';
 
 class ProfessionService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/professions`;
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/professions`;
 
   async getProfessions(props?: { search?: string; categoryId?: string }) {
     const params = new URLSearchParams();

@@ -8,7 +8,7 @@ import { getToken } from 'next-auth/jwt';
 import { auth } from '@/auth';
 
 class ApplicationService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/applications`;
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/applications`;
 
   async getApplications(props: {
     jobSeekerId?: string | undefined;

@@ -5,7 +5,7 @@ import JobSeekerType from '@/types/jobSeeker';
 import PaginationType from '@/types/pagination';
 
 class JobSeekerService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/jobSeekers`;
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/jobSeekers`;
 
   async getJobSeekers(props: {
     page?: number;

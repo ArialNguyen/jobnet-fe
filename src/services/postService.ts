@@ -26,7 +26,7 @@ type GetProps = {
 };
 
 class PostService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/posts`;
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/posts`;
   private apiElasticUrl = `${envConfig.NEXT_PUBLIC_ELASTIC}/api/post`;
 
   async getPosts(props?: GetProps) {

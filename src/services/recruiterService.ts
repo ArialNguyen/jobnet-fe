@@ -5,7 +5,7 @@ import RecruiterType, { FormUpdateProfileRCProps } from '../types/recruiter';
 import envConfig from '@/config';
 
 class RecruiterService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/recruiters`;
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/recruiters`;
 
   async getRecruiters(props: {
     page?: number;

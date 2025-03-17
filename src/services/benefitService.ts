@@ -4,7 +4,7 @@ import type BenefitType from '../types/benefit';
 import envConfig from '@/config';
 
 class BenefitService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/benefits`;
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/benefits`;
 
   async getBenefits(props?: { search?: string }) {
     const params = new URLSearchParams();

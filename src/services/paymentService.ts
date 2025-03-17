@@ -4,7 +4,7 @@ import PaginationType from '@/types/pagination';
 import WishlistType from '@/types/wishlist';
 
 class PaymentService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/payment`;
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/payment`;
 
   async createPayment(
     {

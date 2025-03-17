@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { Toaster } from '@/components/ui/sonner';
 
 type LayoutSize = 'xs' | 'sm' | 'md' | 'lg';
 interface AuthenticationNode {
@@ -30,6 +31,7 @@ export default function AuthenticateLayout({
         layoutSize === 'lg' ? 'py-8 mx-auto h-[100%]' : 'h-screen pb-5 '
       } md:px-2 lg:px-0 md:bg-slate-200`}
     >
+      <Toaster />
       <div
         className={`${
           layoutSize === 'xs'
@@ -104,7 +106,7 @@ export default function AuthenticateLayout({
             </div>
           </div>
         )}
-
+  
         <div className={`${padding} ${layoutSize === 'lg' && 'pr-8'}`}>
           <p className="text-2xl font-bold text-emerald-500">{t(welcome)}</p>
           <p className="pt-2 font-semibold text-gray-700">{t(introduction)}</p>
@@ -112,6 +114,7 @@ export default function AuthenticateLayout({
           {children}
         </div>
       </div>
+      
     </div>
   );
 }

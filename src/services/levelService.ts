@@ -4,7 +4,7 @@ import LevelType from '../types/level';
 import envConfig from '@/config';
 
 class LevelService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/levels`;
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/levels`;
 
   async getLevels(props?: { search?: string }) {
     const params = new URLSearchParams();

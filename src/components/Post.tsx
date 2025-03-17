@@ -105,7 +105,7 @@ export default function Post({
         </div>
 
         <div className="flex-none text-sm italic text-slate-600 text-end">
-          {t('post.updatedOn', { date: '06/07/2023' })}
+          {t('post.updatedOn', { date: parse(post.createdAt, 'dd/MM/yyyy', new Date()).toLocaleDateString() })}
         </div>
       </div>
     </div>

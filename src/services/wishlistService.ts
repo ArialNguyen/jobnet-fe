@@ -4,7 +4,7 @@ import PaginationType from '@/types/pagination';
 import WishlistType from '@/types/wishlist';
 
 class WishlistService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/wishlists`;
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/wishlists`;
 
   async getWishlists(props: {
     page?: number;

@@ -3,7 +3,7 @@ import BaseService from "@/services/baseService";
 import UserType from "@/types/user";
 
 class RegistrationService extends BaseService {
-  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_BASE_URL}/api/registration`
+  private apiBaseUrl = `${envConfig.NEXT_PUBLIC_API_URL}/api/registration`
   async registerJobSeeker(req: object) {
     console.log("URLasds: ", this.apiBaseUrl);
 

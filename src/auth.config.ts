@@ -17,7 +17,7 @@ export default {
             // logic to verify if user exists
             const {email, password, role} = credentials
             
-            let response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/login`, {
+            let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`, {
               method: "POST",
               headers: {
                 'Content-Type': 'application/json',
